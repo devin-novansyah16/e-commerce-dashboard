@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
+from pathlib import Path
 
 sns.set(style='dark')
 
@@ -37,8 +38,9 @@ def create_byrfm_df(df):
     rfm_df["recency"] = rfm_df["max_order_timestamp"].apply(lambda x: (recent_date - x).days)
     return rfm_df
 
-# Load cleaned data
-all_df = pd.read_csv("all_data.csv")
+# Load cleaned data (use path relative to this script so Streamlit Cloud can find the CSV)
+base_dir = Path(__file__).resolve().parent
+all_df = pd.read_csv(base_dir / "all_data.csv")
 
 datetime_columns = ["order_purchase_timestamp"]
 all_df.sort_values(by="order_purchase_timestamp", inplace=True)
