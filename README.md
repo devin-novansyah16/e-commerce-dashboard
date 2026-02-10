@@ -42,6 +42,9 @@ streamlit run dashboard/dashboard.py
 ## Data
 Dataset yang digunakan ada di folder `data/` (pastikan file `all_data.csv` tersedia).
 
+## Notebook
+Notebooks analisis ditempatkan di folder `notebook/`. Notebook utama: [Proyek_Analisis_Data (2).ipynb](notebook/Proyek_Analisis_Data%20(2).ipynb)
+
 ## Dependensi
 Lihat `requirements.txt` untuk daftar paket Python yang dibutuhkan.
 
